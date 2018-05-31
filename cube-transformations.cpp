@@ -1,9 +1,9 @@
 #include <glut.h>
 #include <math.h>
 
-float angleX, angleY, angleZ = 0;
-float scaleX = 1.5f; float scaleY = 1.5f; float scaleZ = 1.5f;
-float transX = 0; float transY = 0;
+GLfloat angleX, angleY, angleZ = 0;
+GLfloat scaleX = 1.5f; GLfloat scaleY = 1.5f; GLfloat scaleZ = 1.5f;
+GLfloat transX = 0; GLfloat transY = 0;
 
 void changeSize(int, int);
 void renderScene(void);
@@ -35,6 +35,7 @@ int main(int argc, char** argv)
 
 	return 1;
 }
+
 void changeSize(int w, int h)
 {
 	// use the projection matrix
@@ -60,11 +61,9 @@ void renderScene(void)
 	// clear color and depth buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	//glMatrixMode(GL_MODELVIEW);
 	// reset transformations
 	glLoadIdentity();
 
-	
 	// set the camera
 	gluLookAt(0.0f, 0.0f, 2.0f,
 		1.0f, -1.0f, 0.0f,
@@ -114,7 +113,7 @@ void drawCube()
 	glTranslatef(transX, transY, 0); // translate
 
 	glBegin(GL_QUADS);
-	glColor3f(1.0, 0.0, 0.0);    // Color RED - TOP
+	glColor3f(1.0, 0.0, 0.0);    // Color RED - Top
 
 	glVertex3f(1.0, 1.0, 1.0); // TOP-RIGHT-NEAR
 	glVertex3f(-1.0, 1.0, 1.0); // TOP-LEFT-NEAR
@@ -135,7 +134,7 @@ void drawCube()
 	glVertex3f(-1.0, -1.0, -1.0); //BOTTOM-LEFT-FAR
 	glVertex3f(1.0, -1.0, -1.0); //BOTTOM-RIGHT-FAR
 
-	glColor3f(0.0, 0.0, 1.0); //Color BLUE - RIGHT
+	glColor3f(0.0, 0.0, 1.0); //Color BLUE - Right
 
 	glVertex3f(1.0, 1.0, 1.0); //TOP-FRONT-NEAR
 	glVertex3f(1.0, 1.0, -1.0); //TOP-BACK-FAR
@@ -203,8 +202,8 @@ void processNormalKeys(unsigned char key, int x, int y)
 		glutPostRedisplay();
 		break;
 	}
-
 }
+
 void processSpecialKeys(int key, int x, int y) {
 
 	float fraction = 0.1f;
