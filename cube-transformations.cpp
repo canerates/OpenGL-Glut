@@ -206,8 +206,6 @@ void processNormalKeys(unsigned char key, int x, int y)
 
 void processSpecialKeys(int key, int x, int y) {
 
-	float fraction = 0.1f;
-
 	switch (key) {
 	case GLUT_KEY_LEFT:
 		transX -= 1.0f;
