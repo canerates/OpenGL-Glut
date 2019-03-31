@@ -1,2 +1,2 @@
 # OpenGL-Glut
-Taipei Tech - Introduction to Computer Graphics
+Taipei Tech - Computer Graphics
